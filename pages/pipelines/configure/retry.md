@@ -232,7 +232,7 @@ steps:
 
 ## Apply the same retry policy across multiple steps
 
-Use [YAML anchors](https://yaml.org/spec/1.2-old/spec.html#id2765878) to define a retry policy once and reuse it across multiple steps. This keeps your pipeline configuration consistent and reduces repetition.
+Use [YAML anchors](https://yaml.org/spec/1.2-old/spec.html#id2765878) to define a retry policy once and reuse it across multiple steps. This approach keeps your pipeline configuration consistent and reduces repetition.
 
 ```yml
 retry_policy: &retry_policy
