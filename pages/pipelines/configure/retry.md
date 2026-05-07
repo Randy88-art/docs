@@ -232,7 +232,9 @@ steps:
 
 ## Apply the same retry policy across multiple steps
 
-Use [YAML anchors](https://yaml.org/spec/1.2-old/spec.html#id2765878) to define a retry policy once and reuse it across multiple steps. This approach keeps your pipeline configuration consistent and reduces repetition.
+You can use [YAML anchors](https://yaml.org/spec/1.2-old/spec.html#id2765878) to define a retry policy once and reuse it across multiple steps. This keeps your pipeline configuration consistent and reduces repetition.
+
+For example:
 
 ```yml
 retry_policy: &retry_policy
@@ -257,6 +259,6 @@ steps:
 ```
 {: codeblock-file="pipeline.yml"}
 
-The anchor (`&retry_policy`) defines the retry configuration, and the alias (`*retry_policy`) applies it to each step. Updating the anchor updates every step that references it.
+The anchor (`&retry_policy`) in the example defines the retry configuration, and the alias (`*retry_policy`) applies it to each step. Updating the anchor updates every step that references it.
 
 You can also generate steps programmatically using [dynamic pipelines](/docs/pipelines/configure/dynamic-pipelines) for more advanced retry configuration patterns.
